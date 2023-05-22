@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sleep and alcohol</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      h3 {
+        font-size: 20px;
+        margin: 18px 0px 20px 0px;
+      }
+
+      h4 {
+        margin: 5px 0px 5px 0px;
+        text-align: center;
+      }
+
+      body {
+        margin: 0 auto;
+        width: 90%;
+      }
+
+      header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Style the tabs */
+      .tab {
+        overflow: hidden;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+      }
+      /* 
+      .tabcontent {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 9.6rem;
+        align-items: center;
+      } */
+
+      .plot1 {
+        text-align: center;
+      }
+
+      .plot2 {
+        max-width: 770px;
+        margin: 0 auto;
+        padding: 0px 20px;
+        display: grid;
+        gap: 9.6rem;
+        align-items: center;
+      }
+
+      .tab3_ {
+        max-width: 770px;
+        margin: 0 auto;
+        padding: 0px 20px;
+        display: grid;
+        gap: 9.6rem;
+        align-items: center;
+      }
+
+      .tablinks {
+        width: 245px;
+        text-align: center;
+      }
+
+      /* Style the tab links */
+      .tab button {
+        background-color: #EDF4F8;
+        color: 555; /* default color */
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        /* display: flex; */
+        align-items: center;
+        border: solid #fff 1px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px; 
+        
+      }
+
+      /* Change background color of tabs on hover */
+      .tab button:hover {
+        background-color: #BFDCE5;
+      }
+
+      /* Create an active/current tablink class */
+      .tab button.active {
+        background-color: #2b626e;
+        color:#fff;
+        font-weight: bold;
+      }
+
+      /* Style the tab content */
+      .tabcontent {
+        display: none;
+        padding: 6px 0px;
+        border: 1px solid white;
+        border-top: none;
+      }
+
+      /* Style the subtabs */
+      .subtab {
+        overflow: hidden;
+        background-color: white;
+        margin: 10px 0px
+      }
+
+      .subtablinks {
+        width: 147px;
+        text-align: center;
+      }
+
+      .subtablinks1 {
+        width: 200px;
+      }
+
+      .subtablinks3 {
+        width: 160px;
+      }
+
+      .subtablinks2 {
+        width: 130px;
+      }
+
+      .subtablinks5 {
+        width: 90px;
+      }
+
+      /* Style the subtab links */
+      .subtab button {
+        background-color: #EDF4F8;
+        color: #555; /* default color */
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 8px 10px;
+        transition: 0.3s;
+        border: solid #fff 1px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px; 
+      }
+
+      /* Change background color of subtabs on hover */
+      .subtab button:hover {
+        background-color: #BFDCE5;
+      }
+
+      /* Create an active/current subtablink class */
+      .subtab button.active {
+        background-color: #2b626e;
+        color:#fff;
+        /* font-weight: bold; */
+      }
+
+      /* Style the subtab content */
+      .subtabcontent {
+        display: none;
+        padding: 6px 0px;
+        border: 1px solid white;
+        border-top: none;
+      }
+
+      .margin_tb {
+        margin: 5px 0;
+      }
+
+      .margin_b {
+        margin-top: 10px;
+      }
+
+      .block_betweeen_subcontent {
+        margin: 5px 0px
+      }
+
+      #alcvsleep_tooltip,
+      #alcvsleep_heading {
+        display: inline-block;
+        /* or use float: left; */
+        /* add any other styling you want here */
+      }
+
+      #sleep_alc_tooltip,
+      #Sleep_alc_heading {
+        display: inline-block;
+        /* or use float: left; */
+        /* add any other styling you want here */
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h3>Alcohol and Sleep: How They Affect Each Other</h3>
+    </header>
+
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'Sleep_sc_bar')">
+        Sleep score tonight
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'Add_alcohol')">
+        Add alcohol consumption
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'Visualizations')">
+        History
+      </button>
+    </div>
+
+    <div class="container">
+      <div id="Sleep_sc_bar" class="tabcontent">
+        <h4>Sleep loss on chosen day based on alcohol consumption</h4>
+
+        <!-- CSS for buttons next to each other -->
+        <style>
+          #observablehq-sleep_sc_bar-fee0114a,
+          #observablehq-viewof-date_selected-87c3a553 {
+            display: inline-block;
+            /* or use `float: left` property instead */
+            /* float: left; */
+            margin-right: 10px; /* add margin to create space between the two divs */
+          }
+          #observablehq-viewof-date_selected-87c3a553 {
+            vertical-align: top; /* align to the top of the line */
+            margin-top: 20px; /* add some top margin */
+          }
+        </style>
+        <div class="plot1">
+          <div id="observablehq-sleep_sc_bar-fee0114a"></div>
+          <div id="observablehq-viewof-date_selected-87c3a553" class = 'margin_tb'></div>
+        </div>
+      </div>
+
+      <div id="Add_alcohol" class="tabcontent">
+        <h4>Add new alcohol consumption to the sleep data</h4>
+        <div class="plot2">
+          <div class="content_plot2">
+            <p>
+              To add alcohol consumption data, first select date and time, and
+              then add the amount of standard drinks consumed. <br />
+              After adding remember to press "submit" to submit data input and
+              add it to the visualizations.
+            </p>
+            <div id="observablehq-viewof-datetime-87c3a553" class ="margin_b"></div>
+
+            <!-- CSS for buttons next to each other -->
+            <style>
+              #observablehq-add1-87c3a553,
+              #observablehq-add05-87c3a553 {
+                display: inline-block;
+                /* or use float: left; */
+                /* add any other styling you want here */
+              }
+            </style>
+
+            <!-- CSS for question mark tooltip -->
+            <style>
+              .tooltip {
+                position: relative;
+                display: inline-block;
+              }
+
+              .question_mark {
+                position: relative;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background-color: #569daa;
+                color: #fff;
+                font-size: 14px;
+                cursor: help;
+                margin: 0px 5px;
+              }
+
+
+              .tooltip .tooltiptext {
+                visibility: hidden;
+                width: 400px;
+                background-color: #569daa;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                position: absolute;
+                z-index: 1;
+                bottom: 100%;
+                right: auto; /* change from original code */
+                bottom: auto;
+                opacity: 0;
+                transition: opacity 0.3s;
+              }
+
+
+              .tooltip:hover .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+              }
+            </style>
+
+            <!-- Question mark tooltip -->
+
+            <!-- ObservableHQ Embeds - Add alcohol buttons -->
+            <div id="observablehq-add1-87c3a553"></div>
+            <div id="observablehq-add05-87c3a553"></div>
+            <div class="tooltip">
+              <span class="question_mark"> ? </span>
+              <span class="tooltiptext"
+                >A standard <br />
+                = <br />a can or bottle (375ml) of mid-strength beer <br />
+                or a small 100ml glass of red wine <br />
+                or a shot or nip (30ml) of spirits</span
+              >
+            </div>
+            <div id="observablehq-viewof-type_total-fd4fe982"></div>
+            <div id="observablehq-submit_to_sleep-b565c0fa"></div>
+            <div id="observablehq-Daily_alcohol-69c850a2"></div>
+            <!--
+    <div id="observablehq-show_table_2-3beb89ec"></div>
+    <style>
+      #observablehq-show_table_2-3beb89ec {
+        font-size: 12px; /* Change the font size to 24 pixels */
+      }
+    </style>
+    -->
+          </div>
+        </div>
+      </div>
+
+      <div id="Visualizations" class="tabcontent">
+        <!-- CSS for buttons next to each other -->
+        <style>
+          #interval_heading {
+            display: inline-block;
+            /* or use float: left; */
+            /* add any other styling you want here */
+          }
+        </style>
+        <div class="tab3_">
+          <div class="tab3_content">
+          <div class = "block_betweeen_subcontent">
+            <h4 id="interval_heading" style="margin: 0">
+              Choose time interval for visualizations
+            </h4>
+            <!-- Question mark tooltip -->
+            <div id="interval_tooltip tooltip" class="tooltip">
+              <span class="question_mark"> ? </span>
+              <span class="tooltiptext"
+                >Here you can choose which time interval you want to see the
+                visualizations for. <br />
+                First choose how long of a period, you want to see. Then the
+                start date of the period you want to inspect. <br />
+                Additionally you can change the range with the slider under all
+                visualizations.</span
+              >
+            </div>
+
+            <div id="observablehq-viewof-int_select-3b3594fa"></div>
+            <div
+              id="observablehq-viewof-date_button-0ba9990e"
+              style="margin: 1"
+            </div>
+
+          </div>
+
+            <div class="subtab">
+              <button
+                class="subtablinks subtablinks1"
+                onclick="openSubtab(event, 'Sleep_alc_viz')"
+              >
+                Sleep affected by alcohol
+              </button>
+              <button
+                class="subtablinks subtablinks2"
+                onclick="openSubtab(event, 'Sleep_viz')"
+              >
+                Sleep history
+              </button>
+              <button
+                class="subtablinks subtablinks3"
+                onclick="openSubtab(event, 'Alc_viz')"
+              >
+                Alcohol consumption
+              </button>
+              <button
+                class="subtablinks"
+                onclick="openSubtab(event, 'Alc_vs_sleep')"
+              >
+                Alcohol vs sleep
+              </button>
+              <button class="subtablinks subtablinks5" onclick="openSubtab(event, 'Stats')">
+                Stats
+              </button>
+            </div>
+            <div id="Sleep_alc_viz" class="subtabcontent">
+              <!-- CSS for buttons next to each other -->
+
+              <h4 id="Sleep_alc_heading" class = "tooltip" style="margin: 0">
+                Sleep score and alcohol consumption over time
+              </h4>
+              <!-- Question mark tooltip -->
+              <div id="sleep_alc_tooltip" class="tooltip">
+                <span class="question_mark"> ? </span>
+                <span class="tooltiptext"
+                  >In this visualization you can see your sleep score and
+                  compare it to you alcohol intake.<br />
+                  The sleep score is a score of how good you slept, calculated
+                  based on the amount of sleep and deep sleep. <br />
+                  The sleep score is between 0-100, where 0 corresponds to no
+                  sleep at all, and 100 is a perfect night of good sleep. <br />
+                  You can choose if you want to include alcohol consumption or
+                  not with the following selection.</span
+                >
+              </div>
+
+              <div id="observablehq-viewof-alcohol_displayed-4079393d" class = margin_tb></div>
+
+              <div id="observablehq-sleep_alc_viz-5f852049"></div>
+              <div id="observablehq-viewof-range_alc-d40e1d29"></div>
+            </div>
+            <div id="Sleep_viz" class="subtabcontent">
+              <!-- CSS for buttons next to each other -->
+              <style>
+                #sleepscore_tooltip,
+                #Sleepscore_heading {
+                  display: inline-block;
+                  /* or use float: left; */
+                  /* add any other styling you want here */
+                }
+              </style>
+
+              <h4 id="Sleepscore_heading" style="margin: 0">
+                Sleep hours and score over time
+              </h4>
+              <!-- Question mark tooltip -->
+              <div id="sleepscore_tooltip" class="tooltip">
+                <span class="question_mark"> ? </span>
+                <span class="tooltiptext"
+                  >In this visualization you can see how many hours you have
+                  slept in your chosen time period. <br />
+                  Additionally you can see the sleep score, which is a score of
+                  how good you slept, calculated based on the amount of sleep
+                  and deep sleep. <br />
+                  The sleep score is between 0-100, where 0 corresponds to no
+                  sleep at all, and 100 is a perfect night of good sleep. <br />
+                  You can choose between if you want to see sleep hours, score
+                  or both with the following selection.</span
+                >
+              </div>
+              <div id="observablehq-viewof-sleep_plot_sel-482a2ea0" class = 'margin_tb'></div>
+              <div id="observablehq-sleep_viz-2a6486ae"></div>
+              <div id="observablehq-viewof-range_sleep-501d6348"></div>
+            </div>
+            <div id="Alc_viz" class="subtabcontent">
+              <!-- CSS for buttons next to each other -->
+              <style>
+                #alc_tooltip,
+                #alc_heading {
+                  display: inline-block;
+                  /* or use float: left; */
+                  /* add any other styling you want here */
+                }
+              </style>
+
+
+              <h4 id="alc_heading" style="margin: 0">
+                Alcohol consumption visualization
+              </h4>
+              <!-- Question mark tooltip -->
+              <div id="alc_tooltip" class="tooltip">
+                <span class="question_mark"> ? </span>
+                <span class="tooltiptext"
+                  >In this visualization you can see your alcohol consumption
+                  for each day in you chosen time period.</span
+                >
+              </div>
+
+              <div id="observablehq-alc_cons_viz-87c3a553" class ="margin_tb"></div>
+            </div>
+            <div id="Alc_vs_sleep" class="subtabcontent">
+
+              <h4 id="alcvsleep_heading" style="margin: 0">
+                Average sleep score based on consumed alcohol
+              </h4>
+
+              <!-- Question mark tooltip -->
+              <div id="alcvsleep_tooltip" class="tooltip">
+                <span class="question_mark"> ? </span>
+                <span class="tooltiptext"
+                  >In this visualization you can see your average sleep score
+                  based on your alcohol consumption.</span
+                >
+              </div>         
+
+              <div id="observablehq-sleep_vs_alc_viz-0b45fe5a" class ="margin_tb"></div>
+            </div>
+            <div id="Stats" class="subtabcontent">
+              <div id="observablehq-stat_avg_ss-c8e62213"></div>
+              <div id="observablehq-stat_ss_drink-c8e62213"></div>
+              <div id="observablehq-stat_ss_nodrink-497ab9f2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Open the default tab on page load
+      document.getElementsByClassName("tablinks")[0].click();
+      // Open the default subtab on page load
+      document.getElementsByClassName("subtablinks")[0].click();
+
+      function openTab(evt, tabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function openSubtab(evt, subtabName) {
+        // Declare all variables
+        var i, subtabcontent, subtablinks;
+
+        // Get all elements with class="subtabcontent" and hide them
+        subtabcontent = document.getElementsByClassName("subtabcontent");
+        for (i = 0; i < subtabcontent.length; i++) {
+          subtabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="subtablinks" and remove the class "active"
+        subtablinks = document.getElementsByClassName("subtablinks");
+        for (i = 0; i < subtablinks.length; i++) {
+          subtablinks[i].className = subtablinks[i].className.replace(
+            " active",
+            ""
+          );
+        }
+
+        // Show the current subtab, and add an "active" class to the button that opened the subtab
+        document.getElementById(subtabName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
+    />
+    <script type="module">
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+      import define from "https://api.observablehq.com/d/7b42d5e41b70ea4c.js?v=3";
+      new Runtime().module(define, (name) => {
+        //if (name === "viewof file") return new Inspector(document.querySelector("#observablehq-viewof-file-87c3a553"));
+        if (name === "viewof datetime")
+          return new Inspector(
+            document.querySelector("#observablehq-viewof-datetime-87c3a553")
+          );
+        //  if (name === "Total") return new Inspector(document.querySelector("#observablehq-Total-87c3a553"));
+        if (name === "add1")
+          return new Inspector(
+            document.querySelector("#observablehq-add1-87c3a553")
+          );
+        if (name === "add05")
+          return new Inspector(
+            document.querySelector("#observablehq-add05-87c3a553")
+          );
+        if (name === "viewof type_total")
+          return new Inspector(
+            document.querySelector("#observablehq-viewof-type_total-fd4fe982")
+          );
+        //if (name === "submit") return new Inspector(document.querySelector("#observablehq-submit-87c3a553"));
+        if (name === "submit_to_sleep")
+          return new Inspector(
+            document.querySelector("#observablehq-submit_to_sleep-b565c0fa")
+          );
+        if (name === "Daily_alcohol")
+          return new Inspector(
+            document.querySelector("#observablehq-Daily_alcohol-69c850a2")
+          );
+        //if (name === "show_table") return new Inspector(document.querySelector("#observablehq-show_table-87c3a553"));
+        //if (name === "show_table_2") return new Inspector(document.querySelector("#observablehq-show_table_2-3beb89ec"));
+        if (name === "viewof int_select")
+          return new Inspector(
+            document.querySelector("#observablehq-viewof-int_select-3b3594fa")
+          );
+        if (name === "viewof date_button")
+          return new Inspector(
+            document.querySelector("#observablehq-viewof-date_button-0ba9990e")
+          );
+        if (name === "alc_cons_viz")
+          return new Inspector(
+            document.querySelector("#observablehq-alc_cons_viz-87c3a553")
+          );
+        if (name === "stat_avg_ss")
+          return new Inspector(
+            document.querySelector("#observablehq-stat_avg_ss-c8e62213")
+          );
+        if (name === "stat_ss_drink")
+          return new Inspector(
+            document.querySelector("#observablehq-stat_ss_drink-c8e62213")
+          );
+        if (name === "stat_ss_nodrink")
+          return new Inspector(
+            document.querySelector("#observablehq-stat_ss_nodrink-497ab9f2")
+          );
+        if (name === "viewof date_selected")
+          return new Inspector(
+            document.querySelector(
+              "#observablehq-viewof-date_selected-87c3a553"
+            )
+          );
+        if (name === "sleep_sc_bar")
+          return new Inspector(
+            document.querySelector("#observablehq-sleep_sc_bar-fee0114a")
+          );
+        if (name === "viewof sleep_plot_sel")
+          return new Inspector(
+            document.querySelector(
+              "#observablehq-viewof-sleep_plot_sel-482a2ea0"
+            )
+          );
+        if (name === "sleep_viz")
+          return new Inspector(
+            document.querySelector("#observablehq-sleep_viz-2a6486ae")
+          );
+        if (name === "viewof range_sleep")
+          return new Inspector(
+            document.querySelector("#observablehq-viewof-range_sleep-501d6348")
+          );
+        //if (name === "viewof interval") return new Inspector(document.querySelector("#observablehq-viewof-interval-87c3a553"));
+        //if (name === "sleep_sc_viz") return new Inspector(document.querySelector("#observablehq-sleep_sc_viz-87c3a553"));
+        if (name === "viewof alcohol_displayed")
+          return new Inspector(
+            document.querySelector(
+              "#observablehq-viewof-alcohol_displayed-4079393d"
+            )
+          );
+        if (name === "sleep_alc_viz")
+          return new Inspector(
+            document.querySelector("#observablehq-sleep_alc_viz-5f852049")
+          );
+        if (name === "viewof range_alc")
+          return new Inspector(
+            document.querySelector("#observablehq-viewof-range_alc-d40e1d29")
+          );
+        if (name === "sleep_vs_alc_viz")
+          return new Inspector(
+            document.querySelector("#observablehq-sleep_vs_alc_viz-0b45fe5a")
+          );
+
+        if (name === "sleep_data_update") return true;
+        //if (name === "sleep_data_h") return true;
+        //if (name === "sleep_data_h_s") return true;
+        // "sleep_data_h_s_A","sleep_viz","sleep_alc_viz","sleep_vs_alc_viz","sleep_sc_bar","mean_sleep_score_tot","mean_sleep_score","mean_sleep_score_alc","minDate_data","maxDate_data","sleep_alc_viz_ana","sleep_sc_bar_old","submit_to_sleep","show_table_2","alc_cons_viz","mean_sleep_hour_tot","mean_sleep_hour","mean_sleep_hour_alc","stat_avg_ss","stat_ss_nodrink","stat_ss_drink","getInterval","getInterval2","viewof range_sleep","viewof range_alc","method_int"
+        //return ["submit","getInterval","getInterval2","method_int","sleep_sc_bar_old"].includes(name);
+      });
+    </script>
+  </body>
+</html>

@@ -350,3 +350,13 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+
+a {
+  text-decoration: none;
+  color: #333; /* 设置为你想要的颜色，例如黑色 */
+}
+
+a:visited {
+  color:#333;
+}
