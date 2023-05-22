@@ -17,12 +17,19 @@
       height: 100vh;
       margin: 0;
     }
+    .title {
+      color:rgb(226, 227, 227);
+      font-size:38px;
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
 
     .button-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap:30px
+      gap:30px;
+      margin-bottom: 80px;
     }
 
     button {
@@ -47,6 +54,7 @@
 </head>
 <body>
   <div class="button-container">
+    <h1 class="title">TWO LITTLE GAMES</h1>
     <a href="Guess/index.html"><button onclick="guessNumber()">Guess Number</button></a>
     <a href="Big/index.html"><button onclick="rollDice()">Roll Dice (until 100 to win)</button></a>
   </div>
