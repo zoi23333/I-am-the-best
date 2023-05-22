@@ -212,7 +212,7 @@ body {
 /* Project */
 .project-section {
   margin-top:270px; 
-  margin-bottom:270px;
+  margin-bottom:0px;
 }
 
 .project-title-img {
@@ -272,9 +272,7 @@ body {
 
 .image-container:hover .projectBG-img-hover {
   display: block;
-
 }
-
 
  .card-container {
   position: relative;
@@ -359,4 +357,23 @@ a {
 
 a:visited {
   color:#333;
+}
+
+/* Contact */
+.contact-box {
+  margin-bottom: 4rem;
+}
+.contact-text {
+  text-align: center;
+
+}
+
+.contact-text-title {
+  font-size:3rem;
+  margin: 2rem;
+}
+
+.contact-text-c {
+  font-size:1.6rem;
+  margin: 1rem;
 }
