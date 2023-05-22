@@ -8,10 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/stylemain.css" />
-  <script
-  type="module"
-  src="js/main_js.js"
-></script>
   <title>Ziwei's personal website</title>
 </head>
 
@@ -21,10 +17,10 @@
     <nav class = "main-nav">
       <ul class = "main-nav-list">
         <li>
-          <a class = "main-nav-link" herf = "#projectContent">PROJECT</a>
+          <a class = "main-nav-link" href = "#“ onclick="scrollToSection('projectContent')">PROJECT</a>
         </li>
         <li>
-          <a class = "main-nav-link" herf = "#">CONTACT</a>
+          <a class = "main-nav-link" href = "#">CONTACT</a>
         </li>
       </ul>
     </nav>
@@ -70,6 +66,7 @@
       <div class="project-content" id="projectContent">
         <ul class = "project-list">
           <li class ="project-block project-block--1">
+            <a href="ExpenseManagerindex.html">
             <div class="card-container">
               <div class = "image-container">
                 <div class = "image-container-bg">
@@ -78,14 +75,17 @@
                   </div>
               </div>
               <div class="overlay">
-                <div class="project-info-box">
+   
+                <div class="project-info-box" onclick="location.href=''">
+
                   <h3 class= "project-name">Expense Manager</h3>
                   <p class = "project-des">A web app for recording money statements</p>
                   <img class="project-img" src="img/mainpage/P1.png" alt="The image of project">
                   <p class = "project-language">- JavaScript & HTML & CSS -</p>
                 </div>
               </div>
-          </div>
+            </div>
+           </a>
           </li>
           <li class ="project-block project-block--2">
                         <div class="card-container">
@@ -173,7 +173,7 @@
 
 
 
-  
+    <script src="js/main_js.js"></script>
 </body>
 </html>
 <<<<<<< HEAD:docs/indem.html
