@@ -101,7 +101,7 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 9.0rem;
+  gap: 5.5rem;
 }
 
 .section-hero {
@@ -211,8 +211,12 @@ body {
 
 /* Project */
 .project-section {
-  margin-top:270px; 
+  margin-top:150px; 
   margin-bottom:0px;
+}
+
+.project-sectionSDE {
+  margin-top:0px; 
 }
 
 .project-title-img {
@@ -221,6 +225,7 @@ body {
   display:block;
   margin-left: auto;
   margin-right: auto;
+  margin-top:110px; 
   margin-bottom:110px; 
 }
 
@@ -247,7 +252,7 @@ body {
 
 .projectBG-img {
   display: block;
-  width:20rem;
+  width:22rem;
   height:29.5rem;
   /* position: relative; */
 }
