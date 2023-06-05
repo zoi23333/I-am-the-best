@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wondering-Library</title>
+  <style>
+    body {
+      margin-bottom: 90px;
+    }
+
+    .image-container {
+        text-align: center;
+    }
+    .image-container img {
+        margin-bottom: 0px;
+        max-width: 100%;
+    }
+    /* .img {
+      max-width: 1280px;
+  margin: 0 auto;
+    } */
+    @media (min-width: 501px) {
+            .image-container img {
+                max-width: 80%;
+            }
+        }
+        
+        @media (min-width: 1681px) {
+            .image-container img {
+                max-width: 1680px;
+            }
+        }
+
+        .button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .button-container button {
+            border: none;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            background-color: #D6576B;
+            color: #ffffff;
+            font-size: 14px;
+            box-shadow: 0 2.4px 4.8px rgba(0, 0, 0, 0.075);
+            line-height:120%
+        }
+
+        .button-container button:hover {
+            background-color: #f68b9b;
+        }
+</style>
+
+<script>
+  function navigateToIndex() {
+      window.location.href = "index.html#projectContentUX";
+  }
+</script>
+
+</head>
+<body>
+  <div class="image-container">
+      <img class = 'img' src="UXqian/0.png" alt="Image 1">
+      <img class = 'img' src="UXqian/1.png" alt="Image 2">
+      <img class = 'img' src="UXqian/2.png" alt="Image 3">
+      <img class = 'img' src="UXqian/3.png" alt="Image 4">
+      <img class = 'img' src="UXqian/4.png" alt="Image 5">
+      <img class = 'img' src="UXqian/5.png" alt="Image 6">
+      <img class = 'img' src="UXqian/6.png" alt="Image 7">
+      <img class = 'img' src="UXqian/7.png" alt="Image 8">
+  </div>
+
+  <div class="button-container">
+    <button type="button" onclick="navigateToIndex()">More projects</button>
+</div>
+</body>
+</html>
