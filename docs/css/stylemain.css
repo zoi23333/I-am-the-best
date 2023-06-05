@@ -101,7 +101,7 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 9.0rem;
+  gap: 5.5rem;
 }
 
 .section-hero {
@@ -211,8 +211,12 @@ body {
 
 /* Project */
 .project-section {
-  margin-top:270px; 
-  margin-bottom:270px;
+  margin-top:150px; 
+  margin-bottom:0px;
+}
+
+.project-sectionSDE {
+  margin-top:0px; 
 }
 
 .project-title-img {
@@ -221,6 +225,7 @@ body {
   display:block;
   margin-left: auto;
   margin-right: auto;
+  margin-top:110px; 
   margin-bottom:110px; 
 }
 
@@ -254,8 +259,8 @@ body {
 
 .projectBG-img-hover {
   display: block;
-  width:20rem;
-  height:29.5rem;
+  /* width:20rem;
+  height:29.5rem; */
   /* keep center */
   position: absolute;
   top: 0;
@@ -270,11 +275,13 @@ body {
   display: none;
 }
 
-.image-container:hover .projectBG-img-hover {
-  display: block;
-
+.projectBG-img.SDE {
+  width:22rem;
 }
 
+.image-container:hover .projectBG-img-hover {
+  display: block;
+}
 
  .card-container {
   position: relative;
@@ -307,6 +314,7 @@ body {
   left: 50%;
   /* transform: translate(-50%, -50%); */
   z-index: 1;
+  margin-top: 1.8rem
 }
 
 .project-name {
@@ -318,19 +326,27 @@ body {
   font-size: 1.4rem;
   text-align: center;
   font-weight: 200;
+  line-height: 120%
+}
+
+.project-des.more {
+  margin: 0.86rem 0
 }
 
 .project-img {
   width:10rem;
   height:10rem;
-  margin: 0.8rem 0;
+  margin: 0.8rem 0 0 0 ;
 }
-
-
 
 .project-language {
   font-size: 1.2rem;
   text-align: center;
+  line-height: 120%
+}
+
+.base {
+  color: #b3b3b3
 }
 
 .project-block:hover {
@@ -349,4 +365,33 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+
+a {
+  text-decoration: none;
+  color: #333; /* 设置为你想要的颜色，例如黑色 */
+}
+
+a:visited {
+  color:#333;
+}
+
+/* Contact */
+.contact-box {
+  margin-bottom: 4rem;
+}
+.contact-text {
+  text-align: center;
+
+}
+
+.contact-text-title {
+  font-size:3rem;
+  margin: 2rem;
+}
+
+.contact-text-c {
+  font-size:1.6rem;
+  margin: 1rem;
 }
