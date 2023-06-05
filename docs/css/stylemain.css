@@ -252,15 +252,15 @@ body {
 
 .projectBG-img {
   display: block;
-  width:22rem;
+  width:20rem;
   height:29.5rem;
   /* position: relative; */
 }
 
 .projectBG-img-hover {
   display: block;
-  width:20rem;
-  height:29.5rem;
+  /* width:20rem;
+  height:29.5rem; */
   /* keep center */
   position: absolute;
   top: 0;
@@ -273,6 +273,10 @@ body {
   pointer-events: none;
   /* Hover effect */
   display: none;
+}
+
+.projectBG-img.SDE {
+  width:22rem;
 }
 
 .image-container:hover .projectBG-img-hover {
@@ -310,6 +314,7 @@ body {
   left: 50%;
   /* transform: translate(-50%, -50%); */
   z-index: 1;
+  margin-top: 0.8rem
 }
 
 .project-name {
@@ -321,12 +326,13 @@ body {
   font-size: 1.4rem;
   text-align: center;
   font-weight: 200;
+  line-height: 120%
 }
 
 .project-img {
   width:10rem;
   height:10rem;
-  margin: 0.8rem 0;
+  margin: 0.8rem 0 0 0 ;
 }
 
 
