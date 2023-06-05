@@ -25,12 +25,19 @@
             .image-container img {
                 max-width: 80%;
             }
+            /* .img-need-video {
+              max-width: 80%;
+            } */
         }
         
         @media (min-width: 1681px) {
             .image-container img {
                 max-width: 1680px;
             }
+            /* .img-need-video {
+              max-width: 1680px;
+            } */
+
         }
 
         .button-container {
@@ -54,6 +61,36 @@
         .button-container button:hover {
             background-color: #cb503a;
         }
+
+        .img-need-video {
+    position: relative;
+}
+
+.img-need-video img {
+    position: relative;
+    z-index: -1;
+}
+
+.video-button {
+    position: absolute;
+    top: 93%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* Button styles */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #a84736;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.video-button:hover {
+    background-color: #cb503a;
+}
+
 </style>
 
 <script>
@@ -74,7 +111,12 @@
       <img class = 'img' src="UXcham/6.png" alt="Image 7">
       <img class = 'img' src="UXcham/7.png" alt="Image 8">
       <img class = 'img' src="UXcham/8.png" alt="Image 9">
-      <img class = 'img' src="UXcham/9.png" alt="Image 10">
+      <div class = 'img-need-video'>
+        <img class = 'img' src="UXcham/9.png" alt="Image 10">
+        <a class="video-button" href="https://www.youtube.com/watch?v=Da_7XFBfOss&ab_channel=ZiweiChen" target="_blank">
+          Watch the Video
+      </a>
+      </div>
   </div>
 
   <div class="button-container">
