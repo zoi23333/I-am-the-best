@@ -308,13 +308,3 @@ h2 {
  color:#888;
  text-align:right;
 }
-
-
-a {
-  text-decoration: none;
-  color: #333; /* 设置为你想要的颜色，例如黑色 */
-}
-
-a:visited {
-  color:#333;
-}
