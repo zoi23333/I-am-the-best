@@ -191,6 +191,14 @@ article {
   background-color: #9c9bc3;
 }
 
+.plant-button-container button {
+  background-color: #3F874E;
+}
+
+.plant-button-container button:hover {
+  background-color: #5bbf71;
+}
+
 .chambtn {
   background-color: #a84736;
 }
@@ -198,6 +206,7 @@ article {
 .C-button-container button:hover {
   background-color: #cb503a;
 }
+
 
 .ecoHBtn {
   background-color:#61ADAD
