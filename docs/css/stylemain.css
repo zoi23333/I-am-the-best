@@ -57,10 +57,8 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #333;
-
   max-width: 1680px;
   margin: 0 auto;
-
 }
 
 .header {
@@ -79,10 +77,6 @@ body {
   color: #333;
   letter-spacing: -0.5px;
 }
-
-/* .main-nav-link:hover {
-  cursor: pointer
-} */
 
 .Portfolio {
   text-transform: uppercase;
@@ -209,15 +203,83 @@ body {
   height:176px;
 }
 
-/* Project */
-.project-section {
-  margin-top:150px; 
-  margin-bottom:0px;
+
+/* Project entrance cards */
+
+.entrance-card-container {
+  margin-top: 200px;
+  margin-left: 53px;
+  margin-right: 53px
 }
 
-.project-sectionSDE {
-  margin-top:0px; 
+.entrance-area-title {
+  font-weight: 500;
+  color: #333;
+  font-size: 36px;
 }
+
+.card-container-entrance {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 50px;
+
+}
+
+.entrance-card {
+  position: relative; 
+  top: 0;
+  transition: top ease 0.5s;
+}
+
+.entrance-card:hover {
+  top: -5px;
+}
+
+
+.project-entrance-img {
+  max-width: 100%;
+}
+
+
+
+.entrance-title {
+  position: absolute; /* Set to absolute for overlaying the text */
+  top: 50%; /* Center vertically within the container */
+  left: 50%; /* Center horizontally within the container */
+  transform: translate(-50%, -50%); /* Center the text */
+  padding: 5px; /* Add padding for better spacing */
+  border-radius: 5px; /* Add rounded corners */
+  color: #fff;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+
+
+/* Project */
+.project-section {
+  margin-top:60px; 
+  margin-bottom:0px;
+  background-color: #fff;
+  background-image: linear-gradient(to bottom, #f9f9f9, #fff, #f9f9f9);
+  margin:0 58px 0 58px;
+  box-shadow: 0 0.1rem 6.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 15px;
+  height:720px
+}
+
+/* .project-sectionSDE {
+  margin-top:60px; 
+  margin-bottom:0px;
+  background-color: #fff;
+  margin:0 58px 0 58px;
+  box-shadow: 0 0.1rem 6.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 15px;
+  height:700px
+} */
 
 .project-title-img {
   width:484px;
@@ -225,19 +287,18 @@ body {
   display:block;
   margin-left: auto;
   margin-right: auto;
-  margin-top:110px; 
-  margin-bottom:110px; 
+  margin-top:60px; 
+  margin-bottom:50px; 
+  opacity: 0.9;
 }
 
 .project-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: #fff; */
-  /* height: 8.4rem; */
-  padding: 0 5.8rem;
   list-style:none;
-  gap: 2.5rem;
+  gap: 3.5rem;
+  margin-bottom: 100px;;
 }
 
 /* Project cards */
@@ -274,8 +335,8 @@ padding: 0rem 0 0.14rem 0;
 
 .projectBG-img {
   display: block;
-  width:20rem;
-  height:29.5rem;
+  width:22rem;
+  /* height:29.5rem; */
   /* position: relative; */
 }
 
@@ -379,7 +440,7 @@ padding: 0rem 0 0.14rem 0;
   width: 100%;
   /* display: block; */
   text-align: center;
-  margin-top:12.4rem;
+  margin-top:8.4rem;
 }
 
 .project-section {
@@ -401,7 +462,8 @@ a:visited {
 
 /* Contact */
 .contact-box {
-  margin-bottom: 4rem;
+  margin-top: 20rem;
+  margin-bottom: 5rem;
 }
 .contact-text {
   text-align: center;

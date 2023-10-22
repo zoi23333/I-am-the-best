@@ -1,0 +1,229 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: start center;
+  background-color: #f7f7f7; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right,#f6f6f7 , #f4f3f2);
+  font-family: 'Mukta', sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #333;
+  max-width: 1680px;
+  margin: 0 auto;
+}
+
+.EcoHBody {
+  background-image: none;
+  background-color: #fff; 
+}
+
+
+/* Intro img */
+.introImg {
+  width: 70vw;
+  height:auto;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+h1 {
+  margin-bottom: 60px;
+  text-align: center;
+  color: #6d6ba1;
+}
+
+
+/* Image Gallery */
+
+.imageGalleryContainer {
+  position: relative; /* Set to relative to make it the positioning context */
+  margin-bottom: 50px;
+}
+
+article {
+  position: absolute;
+  top: 12vh;
+  left: 50%;
+  transform: translate(-50%); /* Center vertically */
+  width: 70vw;
+  color: #333;
+  /*  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+article img {
+  margin: 0px;
+  height: 100%; 
+  width: 100%; 
+  padding-bottom: 100px
+}
+
+article h1,
+article p {
+  margin: 10px;
+}
+
+article h1 {
+  font-size: 1.2rem;
+}
+
+
+
+article p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.g {
+  width: auto; /* no anim */
+  height: 5vh;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-rows: 10vh;
+  place-content: start center;
+  z-index: 1;
+  transition: all 1s;
+  position: relative;
+  top: 0vh;
+}
+
+.g:hover {
+  background: linear-gradient(transparent, hsla(0, 0%, 100%, 0.5), transparent);
+  height: 70vh;
+  width: 70vw;
+}
+
+.g a {
+  font: 0.8em monospace;
+  position: static;
+  display: block;
+  width: 8.75vw;
+  height: 3ch;
+  display: grid;
+  place-content: center;
+  background: hsla(0, 0%, 100%, 0.5);
+  color: #333;
+  text-decoration: none;
+  border-bottom: thin solid #6C6AA1;
+  box-sizing: border-box;
+}
+
+.gEcoH a {
+  border-bottom: thin solid #61ADAD;
+}
+
+.gcham a {
+  border-bottom: thin solid #A84736;
+}
+
+.g a:hover {
+  background: hsla(0, 0%, 0%, 0.5);
+  color: #eee;
+  border-bottom: 0 none;
+}
+
+.g a img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%);
+  transition: clip-path 0.3s ease-in;
+}
+
+.g a:hover img,
+.g a img:hover {
+  clip-path: polygon(50% 0, 0 0, 0 100%, 50% 100%, 50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+
+/* fx */
+article {
+  transition: filter 0.5s;
+}
+
+.g:hover + article {
+  display: none;
+}
+
+
+/* Back to home page button */
+.button-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.button-container button {
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  color: #ffffff;
+  font-size: 14px;
+  box-shadow: 0 2.4px 4.8px rgba(0, 0, 0, 0.075);
+  line-height:120%
+}
+
+.button-container button:hover {
+  cursor: pointer;
+}
+
+.L-button-container button {
+  background-color: #6C6AA1;
+}
+
+.L-button-container button:hover {
+  background-color: #9c9bc3;
+}
+
+.chambtn {
+  background-color: #a84736;
+}
+
+.C-button-container button:hover {
+  background-color: #cb503a;
+}
+
+.ecoHBtn {
+  background-color:#61ADAD
+}
+
+.ecoHBtn hover {
+  background-color:#90c7c7
+  
+}
+
+
+.video-button {
+  position: fixed;
+  bottom: 130px;
+  right: 20px;
+  margin-top: 300px;
+  /* Button styles */
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #a84736;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.video-button:hover {
+  background-color: #cb503a;
+}
